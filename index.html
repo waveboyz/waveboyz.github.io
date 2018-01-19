@@ -250,143 +250,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/19/xcode-plugin/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="waveboyz">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="waveboyz's blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/01/19/xcode-plugin/" itemprop="url">未命名</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-19T22:19:09+08:00">
-                2018-01-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>title: XCode插件使用<br>date: 2018-01-19</p>
-<p>   Xcode很强大，但是也还是有很多不足的地方，所以和很多IDE一样，Xcode也是有很多plugins支持的。</p>
-<p>   和开发一样，Xcode插件管理也有类似于管理第三方库的cocoapods的东西，叫Alcatraz。</p>
-<p>  安装过程</p>
-<p>curl -fsSL <a href="https://raw.github.com/alcatraz/Alcatraz/master/Scripts/install.sh" target="_blank" rel="noopener">https://raw.github.com/alcatraz/Alcatraz/master/Scripts/install.sh</a> | sh</p>
-<p> 如果之前已有安装，那么需要删除</p>
-<p>rm -rf ~/Library/Application\ Support/Developer/Shared/Xcode/Plug-ins/Alcatraz.xcplugin</p>
-<p>rm -rf ~/Library/Application\ Support/Alcatraz/</p>
-<p>更新插件：</p>
-<p>不管你是用直接download zip的方法安装插件的还是用Alcatraz安装的插件如果插件本身没有最新xcode的支持，那在你的Xcode更新一个版本后，Xcode插件就会失效了。 这个问题就是没有把最新版本xcode的DVTPlugInCompatibilityUUID配到插件的支持列表中。</p>
-<p>先获取，终端中输入</p>
-<p>defaults read /Applications/Xcode.app/Contents/Info DVTPlugInCompatibilityUUID</p>
-<p>然后按照如下目录~/Library/Application\ Support/Developer/Shared/Xcode/Plug-ins</p>
-<p>找到插件列表，选中对应的插件显示包内容，并打开info.plist文件 在这个数组中添加最新的UUID即可</p>
-<p>也有更犀利的做法就是：</p>
-<p>find ~/Library/Application\ Support/Developer/Shared/Xcode/Plug-ins -name Info.plist -maxdepth 3 | xargs -I{} defaults write {} DVTPlugInCompatibilityUUIDs -array-add UUID</p>
-<p>最后面的UUID是前面获取到的。</p>
-<p>好了，那么进入Xcode后如何安装你想要的plugins呢，shift+command+9就能呼出管理界面啦</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/19/cocoapods/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -406,7 +269,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/01/19/cocoapods/" itemprop="url">未命名</a></h1>
+                <a class="post-title-link" href="/2018/01/19/cocoapods/" itemprop="url">cocoapods的使用</a></h1>
         
 
         <div class="post-meta">
@@ -418,7 +281,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-19T22:18:34+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-19T00:00:00+08:00">
                 2018-01-19
               </time>
             
@@ -458,8 +321,7 @@
       
         
           
-            <p>title: cocoapods的使用<br>date: 2018-01-19</p>
-<p>1.cocoapods简介:<br>xcode项目用来管理第三方类库  </p>
+            <p>1.cocoapods简介:<br>xcode项目用来管理第三方类库  </p>
 <p>2.安装cocoapodsruby镜像安装<br>因为GFW的原因原生镜像不可用</p>
 <p>1 移除原生镜像<br><code>gem sources - remove https://rubygems.org/</code></p>
 <p>2 添加淘宝镜像<br><code>gem sources - a https://ruby.taobao.org/</code>  </p>
@@ -558,7 +420,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">1</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

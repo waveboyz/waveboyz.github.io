@@ -1725,9 +1725,9 @@ pre .javascript .function {
   height: auto;
   border: 1px solid #eee;
 /* 头像圆形 */
-  border-radius: 120px 120px 120px 120px;
-  -webkit-border-radius: 120px 120px 120px 120px;
-  -moz-border-radius: 120px 120px 120px 120px;
+  border-radius: 100px;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
   box-shadow: inset 0 -1px 0 #333 sf;
 }
 .site-author-name {
@@ -1813,7 +1813,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #69e799;
+  background: #ffb0a7;
 }
 .links-of-blogroll {
   font-size: 13px;
